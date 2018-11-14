@@ -1,2 +1,2 @@
-# Lotta-s-Flea-Market
+# Lotta's Flea Market
 School project about multithreading (Software Design)
