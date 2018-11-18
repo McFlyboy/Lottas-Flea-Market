@@ -9,13 +9,19 @@ namespace Lottas_Flea_Market
 {
 	abstract class User
 	{
+		public static Random Random { get; } = new Random();
+		protected static object LockGetRandom { get; set; } = new object();
+		public string Name { get; }
 		protected Store Store { get; }
-		public User()
+		public Thread Thread { get; }
+		public User(string name)
 		{
+			Name = name;
 			Store = Store.Instance;
-			Thread thread = new Thread(new ThreadStart(Act));
-			thread.Start();
+			Thread = new Thread(new ThreadStart(Act));
+			Thread.Start();
 		}
+		//Method that decides the actions of the User
 		public abstract void Act();
 	}
 }

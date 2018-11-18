@@ -9,15 +9,15 @@ namespace Lottas_Flea_Market.solution.users
 {
 	class Vendor : User
 	{
-		public Vendor() : base()
-		{
-
-		}
+		public Vendor(string name) : base(name) { }
+		//Thread execution starts here
 		public override void Act()
 		{
-			while (true)
+			int itemsPutUpForSale = 0;
+			while (itemsPutUpForSale < 10)
 			{
-				Thread.Sleep(500);
+				Store.PutItemForSale(new Item(Name, ++itemsPutUpForSale, "Description"));
+				Thread.Sleep(1000);
 			}
 		}
 	}

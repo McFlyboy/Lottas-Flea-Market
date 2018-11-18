@@ -8,12 +8,12 @@ namespace Lottas_Flea_Market
 {
 	class Item
 	{
-		public string SalerName { get; }
+		public string VendorName { get; }
 		public int RegName { get; }
 		public string Desc { get; }
-		public Item(string salerName, int regNumber, string desc)
+		public Item(string vendorName, int regNumber, string desc)
 		{
-			SalerName = salerName;
+			VendorName = vendorName;
 			RegName = regNumber;
 			Desc = desc;
 		}
