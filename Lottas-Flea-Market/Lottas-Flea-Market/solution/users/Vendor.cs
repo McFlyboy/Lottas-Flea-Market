@@ -27,7 +27,10 @@ namespace Lottas_Flea_Market.solution.users
 			//Put 15 items up for sale
 			while (itemsPutUpForSale < 15)
 			{
-				Store.PutItemForSale(new Item(Name, ++itemsPutUpForSale, descriptions[Random.Next(descriptions.Length)]));
+				lock (LockGetRandom)
+				{
+					Store.PutItemForSale(new Item(Name, ++itemsPutUpForSale, descriptions[Random.Next(descriptions.Length)]));
+				}
 
 				//Take a break
 				Thread.Sleep(1000);
